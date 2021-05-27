@@ -1,0 +1,267 @@
+
+Block & Inline level elements :- 
+=============================
+   block :- A block-level element always takes up the full width available 
+	div, header, footer, h1-h6, ol, li, ul, table, section, aside, article, p
+
+   inline :- ocupies only some space of width 
+	span, button, img, a, label, code, select, input, 
+
+html Entities :-
+=================
+
+@nbsp; @gt; @lt; @copy; @reg;
+
+semantic & non semantic elements :-
+===============================
+
+<header><footer><nav><main><section><aside><article>
+
+Box model :- (margin-border-padding)
+=========
+
+	all elements have default margin 
+
+Alignments :-
+==========
+ text-align, float,
+
+Position:
+===============
+   Static: Default  Position,  not effected by (top bottom left right) values.
+   Relative: T B L R values will move the element from its normal Position
+   Absolute: Positioned relative to its parent element that is Positioned "relative"
+   Fixed: Positioned relative to view port
+   sticky: Positioned relative to scroll Position
+
+display:- inline | block | inline-block | flex
+========
+    display: block - a line break before and after the element
+
+    display: inline - no line break before or after the element
+
+    inline :- used for aligning block level elements in one line, doesnot adds margin & padding to the element.
+
+    inline-block :- used for aligning elements in one line, add margin and padding to element
+
+    flex :- aligning the elements
+
+    grid :-
+
+
+em & rem units:
+==============
+
+1 rem 16 pixels
+ CSS measuring units: em, rem both relative to their parents front size. The size will change depending on its Parents font size. Example:
+rem : 100% of the Root Element font size.
+em : 100% of the Parent font size.
+
+viewport :
+========
+
+The browser body is the view port, ie width & height of browser;
+
+vh , vw ( we can select 0 to 100)
+
+we can fit images to backegorund using vh & vw.
+
+overflow: hidden | overflow
+========
+
+    hidden:
+    auto:
+
+box model: margin-border-padding-content
+=========
+
+    
+selectors:-
+==========
+
+ 1 Mutiple selectors
+
+    #about, #home {}
+
+ 2 Nested selectors
+
+    #about p {}
+ 
+ 3  div > p : p is direct child of div
+
+ 4  div + p : p is immediate sibling of div
+
+ 5  li:first-child {
+	background-color: yellow;
+    }
+
+ 6  li:last-child {
+      background-color: green;
+    }
+
+ 7  li:nth-child(3) {
+       background-color: blue;
+    }
+
+ 8  li:nth-child(3n+0) {
+      background-color: red;
+    } 
+
+variables :-
+=========
+    :root {
+        --color: red;
+    }
+
+    body {
+        background-color: var(--color);
+    }
+
+keyframe:-
+========
+
+flex:-
+======
+    preferred for alining inner elements
+    use flex tp avoid floats and positions.
+
+CSS grid:
+=========
+    used for layouts, for aligning the elements
+
+SASS:
+====
+    Syntactically Awesome StyleSheets
+    CSS Preprocessor / pre compiler
+    Enhances the functionality of CSS.
+    other Preprocessor include less & stylus
+
+    SASS uses .scss or sass file extensions
+    Browser does not read sass, it must be compiled.
+    Sass files are compiled to normal css files
+    There are many different types of sass compilers(cli & gui)
+
+    -> install node-sass module 
+    -> Add "sass": "node-sass -w scss/ -o dist/css/ --recursive" in scripts property of package json
+    -> create a file with .scss extension
+    -> npm run sass
+    -> css files are generated in dist/css/
+    -> compiled will be done for every when we save		
+	
+what sass offers :-
+----------------
+
+	variables / partials
+	nesting structures
+	inheritence using extends ketwords
+	functions
+	mixins
+	imports : loading others css files
+	
+
+Difference between .sass & .scss extension files:-
+==================================================
+.sass
+------
+a 
+	color: red
+	 &:hover
+		color: blue
+
+.scss
+-----
+a { 	
+	color: red
+	&:hover {
+		color: blue
+	}
+}
+
+
+variables:-
+=========
+
+    $color: green
+
+    body {
+        color: $color
+    }
+
+Partials:-
+========
+
+    create file starting with underscore, then those files will not be compiled and not availble in dist folder
+    These are used to keep variables in Partials
+
+Nesting & structures:
+=====================
+
+    <div class="grid">
+        <h1>Hello<h1>
+        <p class="grid-sec">lorem</p>
+
+    </div>
+
+    .grid {
+        h1 {
+            color: green;
+        }
+        &-sec {
+            color: red;
+        }
+    }
+
+inheritance:
+============
+        <a class="btn-light" href="#">Read more</a>
+        <a class="btn-dark" href="#">Read more</a>
+
+    %btn-shared {
+        display: inline-block;
+        padding: 0.7rem 2rem;
+        border: none;
+        cursor: pointer;
+    }
+
+    .btn {
+        &-light {
+            @extend %btn-shared;
+            background-color: green;
+            color: red;
+        }
+
+        &-dark {
+            @extend %btn-shared;
+            background-color: red;
+            color: green;
+        }
+    }
+
+functions
+===========
+
+    For conditional colors
+
+    functions will take input and return values;
+
+    @function set-text-color($color) {
+        @if(lightness($color) > 50) {
+            return red;
+        } else {
+            return blue;
+        }
+    }
+
+Mixins:-
+=======
+
+    to use set of StyleSheets
+    @include
+
+    
+
+
+
+
+
+

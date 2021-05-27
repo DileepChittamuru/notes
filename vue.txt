@@ -1,0 +1,49 @@
+1 created // for service
+2 mounted // after adding dom
+3 updated // re rendering
+4 destroy
+
+data // a component’s data option must be a function, so that each instance can maintain an independent copy of the returned data object:
+
+Don’t use arrow functions on an options property or callback for created, mounted a
+
+comunication 
+
+parent to child
+props, 
+
+child to parent 
+emit
+
+between any components
+event bus
+
+computed 
+for calculation
+
+watch 
+for watching (change detection)
+
+Mixins are a flexible way to distribute reusable functionalities for Vue components.
+
+slot
+<slot> element to serve as distribution outlets for content.
+
+vuex
+for statemanagment
+
+plugin 
+for using vue-router
+
+filter :-
+
+for data transformation
+
+Vue.filter('capitalize', function (value) {
+  if (!value) return ''
+  value = value.toString()
+  return value.charAt(0).toUpperCase() + value.slice(1)
+})
+
+
+
